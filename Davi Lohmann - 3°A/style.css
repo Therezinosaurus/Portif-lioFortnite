@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #000000;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Área que contém o cartão e os requisitos */
+.pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Perspectiva do cartão */
+.container {
+    width: 400px;
+    height: 250px;
+    perspective: 1000px;
+}
+
+/* Cartão */
+.cartao {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+
+    cursor: pointer;
+}
+
+/* Quando passar o mouse, vira o cartão */
+.container:hover .cartao {
+    transform: rotateY(180deg);
+}
+
+/* Frente e verso */
+.frente,
+.verso {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    backface-visibility: hidden;
+
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* FRENTE AMARELA */
+.frente {
+    background-color: #ffd900;
+    color: #000000;
+
+    padding: 30px;
+}
+
+.frente h1 {
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+/* VERSO VERDE */
+.verso {
+    background-color: #16a34a;
+    color: white;
+
+    padding: 35px;
+
+    transform: rotateY(180deg);
+}
+
+.verso p {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+/* REQUISITOS */
+.requisitos {
+    margin-top: 35px;
+
+    width: 400px;
+
+    color: white;
+
+    text-align: left;
+}
+
+/* Título "Requisitos" */
+.requisitos h2 {
+    font-size: 26px;
+    font-weight: 900;
+
+    margin-bottom: 15px;
+}
+
+/* Lista */
+.requisitos p {
+    font-size: 19px;
+    font-weight: normal;
+
+    margin-bottom: 8px;
+}
